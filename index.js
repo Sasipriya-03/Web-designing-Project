@@ -358,24 +358,3 @@ window.addEventListener("load", function () {
 
 });
 
-emailjs.init({
-    publicKey: "-0OApiYTlEdHi-8tV"
-});
-
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm(
-        "service_obuqnea",
-        "template_tx1cmt8",
-        this
-    )
-    .then(function(response) {
-        alert("Message sent successfully!");
-        document.getElementById("contactForm").reset();
-    })
-    .catch(function(error) {
-        console.log("FAILED:", error);
-        alert("Error: " + (error.text || error.message || "Unknown error"));
-    });
-});
